@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lesson3</string>
+    <string name="button_next">Вперёд</string>
+    <string name="button_back">Назад</string>
+    <string name="text_first">Введите первое число</string>
+    <string name="text_second">Введите второе число</string>
+    <string name="text_operation">Выберете операцию:</string>
+</resources>
