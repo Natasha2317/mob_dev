@@ -10,7 +10,7 @@ import com.example.lesson3.databinding.FragmentFirstBinding
 
 class FragmentFirst: Fragment() {
 
-    private val dataModel: DataModel by activityViewModels()
+    private val numberModel: NumberModel by activityViewModels()
     lateinit var binding: FragmentFirstBinding
 
     override fun onCreateView(
@@ -18,8 +18,8 @@ class FragmentFirst: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFirstBinding.inflate(inflater)
-        if(dataModel.firstNumber.value != null) {
-            binding.number1.setText(dataModel.firstNumber.value.toString())
+        if(numberModel.firstNumber.value != null) {
+            binding.number1.setText(numberModel.firstNumber.value.toString())
         }
         val mainActivity = (activity as MainActivity?)!!
         mainActivity.binding.button2.visibility = View.GONE
@@ -32,6 +32,6 @@ class FragmentFirst: Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        dataModel.firstNumber.value = binding.number1.text.toString()
+        numberModel.firstNumber.value = binding.number1.text.toString()
     }
 }

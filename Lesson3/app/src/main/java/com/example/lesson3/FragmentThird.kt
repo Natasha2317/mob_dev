@@ -11,7 +11,7 @@ import com.example.lesson3.databinding.FragmentThirdBinding
 
 class FragmentThird: Fragment() {
 
-    private val dataModel: DataModel by activityViewModels()
+    private val numberModel: NumberModel by activityViewModels()
     private  lateinit var binding: FragmentThirdBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,19 +19,19 @@ class FragmentThird: Fragment() {
     ): View? {
         val binding = FragmentThirdBinding.inflate(inflater)
         binding.plus.setOnClickListener {
-            dataModel.action.value = "+"
+            numberModel.action.value = "+"
             openFragmentFour()
         }
         binding.minus.setOnClickListener {
-            dataModel.action.value = "-"
+            numberModel.action.value = "-"
             openFragmentFour()
         }
         binding.multiplication.setOnClickListener {
-            dataModel.action.value = "*"
+            numberModel.action.value = "*"
             openFragmentFour()
         }
         binding.division.setOnClickListener {
-            dataModel.action.value = "/"
+            numberModel.action.value = "/"
             openFragmentFour()
         }
         val mainActivity = (activity as MainActivity?)!!

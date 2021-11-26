@@ -10,7 +10,7 @@ import androidx.fragment.app.activityViewModels
 import com.example.lesson3.databinding.FragmentFourBinding
 
 class FragmentFour: Fragment() {
-    private val dataModel: DataModel by activityViewModels()
+    private val numberModel: NumberModel by activityViewModels()
     private lateinit var binding: FragmentFourBinding
 
     override fun onCreateView(
@@ -30,17 +30,17 @@ class FragmentFour: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var result: Double = 0.0
         super.onViewCreated(view, savedInstanceState)
-        if(dataModel.action.value.toString() == "+" && dataModel.firstNumber.value.toString() != "" && dataModel.secondNumber.value.toString() != "") {
-            result = dataModel.firstNumber.value!!.toDouble() + dataModel.secondNumber.value!!.toDouble()
+        if(numberModel.action.value.toString() == "+" && numberModel.firstNumber.value.toString() != "" && numberModel.secondNumber.value.toString() != "") {
+            result = numberModel.firstNumber.value!!.toDouble() + numberModel.secondNumber.value!!.toDouble()
         }
-        if(dataModel.action.value.toString() == "-" && dataModel.firstNumber.value.toString() != "" && dataModel.secondNumber.value.toString() != "") {
-            result = dataModel.firstNumber.value!!.toDouble() - dataModel.secondNumber.value!!.toDouble()
+        if(numberModel.action.value.toString() == "-" && numberModel.firstNumber.value.toString() != "" && numberModel.secondNumber.value.toString() != "") {
+            result = numberModel.firstNumber.value!!.toDouble() - numberModel.secondNumber.value!!.toDouble()
         }
-        if(dataModel.action.value.toString() == "*" && dataModel.firstNumber.value.toString() != "" && dataModel.secondNumber.value.toString() != "") {
-            result = dataModel.firstNumber.value!!.toDouble() * dataModel.secondNumber.value!!.toDouble()
+        if(numberModel.action.value.toString() == "*" && numberModel.firstNumber.value.toString() != "" && numberModel.secondNumber.value.toString() != "") {
+            result = numberModel.firstNumber.value!!.toDouble() * numberModel.secondNumber.value!!.toDouble()
         }
-        if(dataModel.action.value.toString() == "/" && dataModel.firstNumber.value.toString() != "" && dataModel.secondNumber.value.toString() != "") {
-            result = dataModel.firstNumber.value!!.toDouble() / dataModel.secondNumber.value!!.toDouble()
+        if(numberModel.action.value.toString() == "/" && numberModel.firstNumber.value.toString() != "" && numberModel.secondNumber.value.toString() != "") {
+            result = numberModel.firstNumber.value!!.toDouble() / numberModel.secondNumber.value!!.toDouble()
         }
         binding.result.text = result.toString()
     }

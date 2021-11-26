@@ -10,15 +10,15 @@ import com.example.lesson3.databinding.FragmentSecondBinding
 
 class FragmentSecond: Fragment() {
 
-    private val dataModel: DataModel by activityViewModels()
+    private val numberModel: NumberModel by activityViewModels()
     lateinit var binding: FragmentSecondBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSecondBinding.inflate(inflater)
-        if(dataModel.secondNumber.value != null) {
-            binding.number2.setText(dataModel.secondNumber.value.toString())
+        if(numberModel.secondNumber.value != null) {
+            binding.number2.setText(numberModel.secondNumber.value.toString())
         }
         val mainActivity = (activity as MainActivity?)!!
         mainActivity.binding.button1.visibility = View.VISIBLE
@@ -31,6 +31,6 @@ class FragmentSecond: Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        dataModel.secondNumber.value = binding.number2.text.toString()
+        numberModel.secondNumber.value = binding.number2.text.toString()
     }
 }
