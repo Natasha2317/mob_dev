@@ -23,23 +23,18 @@ class PersonFactory{  // класс для создания объектов
             Gender.FEMALE -> object: Person{
                 private val name = "Мария"
                 override fun getInfo() = println("$name ...")
-                override fun age() = println("Возраст $name")
+                override fun age() = println("Возраст")
             }
         }
     }
 }
 
 fun main(args : Array<String>){  // сновной метод, который мы называем из  PersonFactory, и мы можем динамически получить человека, передавая пол в методе
-    val gender = "MALE"
 
-    val person = PersonFactory.createPerson(when (gender){
-        "MALE"   -> Gender.MALE
-        "FEMALE" -> Gender.FEMALE
-        else     -> throw IllegalArgumentException()
-    })
+    val person = PersonFactory.createPerson(Gender.MALE)
 
     println("Информация о человеке: ")
     person.getInfo()
-    println("Возраст: ")
+    println("")
     person.age()
 }
