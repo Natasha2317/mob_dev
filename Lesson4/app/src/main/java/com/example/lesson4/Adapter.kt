@@ -7,7 +7,7 @@ import com.example.lesson4.databinding.PersonListBinding
 
 
 class Adapter(
-    var personList: List<Person>,
+    var personList: Array<Person>,
     private val clickCard: (Person) -> Unit,
     private val clickCardLike: (Person) -> Unit
 ) : RecyclerView.Adapter<Adapter.Holder>() {
