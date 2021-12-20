@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Lesson4</string>
-    <string name="header">Личности</string>
-    <string name="gender">Гендер</string>
-    <string name="description">Описание</string>
-    <string name="date">Года жизни</string>
-    <string name="name">Имя</string>
-</resources>
